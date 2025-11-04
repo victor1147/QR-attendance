@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecturer Dashboard | QR Attendance</title>
+
+  <!-- External Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body id="lecturer-body">
+  <div class="header">
+    <h2>Lecturer Dashboard</h2>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="main">
+    <div class="card">
+      <h3>Generate Attendance QR Code</h3>
+      <input type="text" id="course" placeholder="Enter Course Code (e.g., CSC301)"/>
+      <p id="courseError" class="error-message"></p>  
+      <p id="timer"></p>
+      <div id="qrcode" class="qr-display"></div>
+      <div class="button-group">
+        <button class="btn" onclick="generateQR()">Generate QR</button>
+        <button class="btn-outline" onclick="printQR()">Print</button>
+      </div>
+     
+    </div>
+
+    <div class="attendance-actions">
+      <button class="btn" onclick="viewAttendance()">View Attendance</button>
+      <button class="btn-outline" onclick="exportToExcel()">Export Excel</button>
+      <button class="btn-outline" onclick="exportToPDF()">Export PDF</button>
+    </div>
+
+    <table id="attendanceTable">
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Student ID</th>
+          <th>Session ID</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</body>
+</html>
