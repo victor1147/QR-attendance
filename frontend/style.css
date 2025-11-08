@@ -223,3 +223,20 @@ tr{
   height: 40px;
   margin-top: 10px;
 }
+#reader{
+  border: 2px solid black;
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+.student-body{
+  min-height: 90vh;
+  align-items: center;
+  
+ 
+}
+.scanqr{
+  font-size: 30px;
+  font-weight: bold;
+}

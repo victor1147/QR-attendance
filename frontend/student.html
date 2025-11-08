@@ -4,11 +4,18 @@
   <title>Student Dashboard</title>
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h2>Student Dashboard</h2>
-  <button onclick="logout()">Logout</button>
-
+<body class="student-body">
+   <div class="header">
+    <h2>Student Dashboard</h2>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+  
+  <div class="card">
+    <p class="scanqr">scan QR</p>
   <div id="reader" width="600px"></div>
+  </div>
+
 </body>
 </html>
