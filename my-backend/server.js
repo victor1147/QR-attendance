@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const SECRET = "qr_secret_key";
 const DB_PATH = "./data.json";
 
@@ -68,5 +68,4 @@ app.get("/attendance", (req, res) => {
   const db = readDB();
   res.json(db.attendance);
 });
-
-app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
